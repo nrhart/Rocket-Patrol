@@ -45,7 +45,7 @@ class Play extends Phaser.Scene {
         });
 
         // initialize score
-        this.p1score = 0;
+        this.p1Score = 0;
 
         // display score
         let scoreConfig = {
@@ -77,9 +77,15 @@ class Play extends Phaser.Scene {
     update() {
         // check key input for restart
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
+            this.scene.restart();
+        }
+
+        if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.scene.start("menuScene");
         }
-        this.starfield.tilePositionX -= 4;
+
+        this.starfield.tilePositionX -= 4;  // update tile sprite
+        
         if (!this.gameOver) {
             this.p1Rocket.update();             // update Rocket Sprite
             this.ship01.update();               // update spaceships (x3)
