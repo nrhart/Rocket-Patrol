@@ -41,7 +41,7 @@ class Menu extends Phaser.Scene {
 
     update() {
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
-          // easy mode
+          // Novice mode
           game.settings = {
             spaceshipSpeed: 3,
             gameTimer: 60000    
@@ -50,7 +50,7 @@ class Menu extends Phaser.Scene {
           this.scene.start('playScene');    
         }
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
-          // hard mode
+          // Expert mode
           game.settings = {
             spaceshipSpeed: 4,
             gameTimer: 45000    
